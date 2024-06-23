@@ -1,0 +1,23 @@
+use a20101263
+db.createCollection("materiaPrima")
+db.materiaPrima.insertOne({nombre: "Madera de pino", precio: 300, cantidad: 11})
+db.materiaPrima.insertOne({nombre: "Bisagra", precio: 10, cantidad: 30})
+db.materiaPrima.insertOne({nombre: "Manija", precio: 5, cantidad: 20})
+db.materiaPrima.insertOne({nombre: "Tornillos", precio: 1, cantidad: 100})
+db.materiaPrima.insertOne({nombre: "Espejos", precio: 50, cantidad: 10})
+db.createCollection("insumos")
+db.insumos.insertOne({nombre: "Adhesivos", precio: 3, cantidad: 10})
+db.insumos.insertOne({nombre: "Pegamento", precio: 5, cantidad: 10})
+db.insumos.insertOne({nombre: "Soportes", precio: 2, cantidad: 25})
+db.insumos.insertOne({nombre: "Placas de union", precio: 2, cantidad: 25})
+db.insumos.insertOne({nombre: "Pintura", precio: 6, cantidad: 10})
+db.insumos.insertOne({nombre: "Lijas", precio: 1, cantidad: 30})
+db.createCollection("personal")
+db.personal.insertOne({nombre: "Martin", apellidos: "De las casas", turno: "Mañana", Tiempo: "12h"})
+db.personal.insertOne({nombre: "Cesar", apellidos: "Flores", turno: "Tarde", Tiempo: "8h"})
+db.personal.insertOne({nombre: "Maria", apellidos: "Cuevas", turno: "Noche", Tiempo: "6h"})
+db.createCollection("produccion")
+db.produccion.insertOne({descripcion: "armario de pino", idpersonal: "66775786e9e138468df57330"})
+
+
+

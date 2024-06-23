@@ -1,0 +1,27 @@
+[{
+  "_id": {
+    "$oid": "66775786e9e138468df57330"
+  },
+  "nombre": "Martin",
+  "apellidos": "De las casas",
+  "turno": "Mañana",
+  "Tiempo": "12h"
+},
+{
+  "_id": {
+    "$oid": "667757ade9e138468df57331"
+  },
+  "nombre": "Cesar",
+  "apellidos": "Flores",
+  "turno": "Tarde",
+  "Tiempo": "8h"
+},
+{
+  "_id": {
+    "$oid": "66775897e9e138468df57332"
+  },
+  "nombre": "Maria",
+  "apellidos": "Cuevas",
+  "turno": "Noche",
+  "Tiempo": "6h"
+}]

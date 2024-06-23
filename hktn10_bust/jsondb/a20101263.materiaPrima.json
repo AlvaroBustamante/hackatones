@@ -1,0 +1,40 @@
+[{
+  "_id": {
+    "$oid": "66774017e9e138468df57325"
+  },
+  "nombre": "Madera de pino",
+  "precio": 300,
+  "cantidad": 11
+},
+{
+  "_id": {
+    "$oid": "6677406de9e138468df57326"
+  },
+  "nombre": "Bisagra",
+  "precio": 10,
+  "cantidad": 30
+},
+{
+  "_id": {
+    "$oid": "6677408ae9e138468df57327"
+  },
+  "nombre": "Manija",
+  "precio": 5,
+  "cantidad": 20
+},
+{
+  "_id": {
+    "$oid": "667740abe9e138468df57328"
+  },
+  "nombre": "Tornillos",
+  "precio": 1,
+  "cantidad": 100
+},
+{
+  "_id": {
+    "$oid": "667740e2e9e138468df57329"
+  },
+  "nombre": "Espejos",
+  "precio": 50,
+  "cantidad": 10
+}]

@@ -1,0 +1,48 @@
+[{
+  "_id": {
+    "$oid": "667741e6e9e138468df5732a"
+  },
+  "nombre": "Adhesivos",
+  "precio": 3,
+  "cantidad": 10
+},
+{
+  "_id": {
+    "$oid": "6677420de9e138468df5732b"
+  },
+  "nombre": "Pegamento",
+  "precio": 5,
+  "cantidad": 10
+},
+{
+  "_id": {
+    "$oid": "6677424ce9e138468df5732c"
+  },
+  "nombre": "Soportes",
+  "precio": 2,
+  "cantidad": 25
+},
+{
+  "_id": {
+    "$oid": "66774262e9e138468df5732d"
+  },
+  "nombre": "Placas de union",
+  "precio": 2,
+  "cantidad": 25
+},
+{
+  "_id": {
+    "$oid": "66774283e9e138468df5732e"
+  },
+  "nombre": "Pintura",
+  "precio": 6,
+  "cantidad": 10
+},
+{
+  "_id": {
+    "$oid": "66774292e9e138468df5732f"
+  },
+  "nombre": "Lijas",
+  "precio": 1,
+  "cantidad": 30
+}]
