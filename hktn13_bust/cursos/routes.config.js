@@ -19,7 +19,7 @@ exports.routesConfig = function (app) {
     ]);
     app.get('/cursos/:cursoid', [
         ValidationMiddleware.validJWTNeeded,
-        PermissionMiddleware.minimumPermissionLevelRequired(FREE),
+        PermissionMiddleware.minimumPermissionLevelRequired(PAID),
         PermissionMiddleware.onlySameUserOrAdminCanDoThisAction,
         UsersController.getById
     ]);
