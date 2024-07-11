@@ -1,36 +1,29 @@
 const mongoose = require('../../common/services/mongoose.service').mongoose;
 const Schema = mongoose.Schema;
 
-const cursoSchema = new Schema({
-    nombre: String,
+const cuponSchema = new Schema({
     descripcion: String,
-    img: String,
-    portada: String,
-    valor: Number
+    descuento_aplicado: Number,
 });
 
 
-cursoSchema.virtual('id').get(function () {
+cuponSchema.virtual('id').get(function () {
     return this._id.toHexString();
 });
 
 // Ensure virtual fields are serialised.
-cursoSchema.set('toJSON', {
+cuponSchema.set('toJSON', {
     virtuals: true
 });
 
-cursoSchema.findById = function (cb) {
-    return this.model('Cursos').find({id: this.id}, cb);
+cuponSchema.findById = function (cb) {
+    return this.model('Cupon').find({id: this.id}, cb);
 };
 
-const Curso = mongoose.model('Cursos', cursoSchema);
+const Cupon = mongoose.model('Cupones', cuponSchema);
 
-
-exports.findByNombre = (nombre) => {
-    return Curso.find({nombre: nombre});
-};
 exports.findById = (id) => {
-    return Curso.findById(id)
+    return Cupon.findById(id)
         .then((result) => {
             result = result.toJSON();
             delete result._id;
@@ -39,35 +32,39 @@ exports.findById = (id) => {
         });
 };
 
-exports.createCurso = (cursoData) => {
-    const curso = new Curso(cursoData);
-    return curso.save();
+exports.createCupon = (cuponData) => {
+    const cupon = new Cupon(cuponData);
+    return cupon.save();
 };
 
 exports.list = (perPage, page) => {
     return new Promise((resolve, reject) => {
-        Curso.find()
+        Cupon.find()
             .limit(perPage)
             .skip(perPage * page)
-            .exec(function (err, cursos) {
+            .exec(function (err, cupones) {
                 if (err) {
                     reject(err);
                 } else {
-                    resolve(cursos);
+                    resolve(cupones);
                 }
             })
     });
 };
 
-exports.patchCurso = (id, cursoData) => {
-    return Curso.findOneAndUpdate({
-        _id: id
-    }, cursoData);
+exports.findByDescripcion = (descripcion) => {
+    return Cupon.find({descripcion: descripcion});
 };
 
-exports.removeById = (cursoId) => {
+exports.patchCupon = (id, cuponData) => {
+    return Cupon.findOneAndUpdate({
+        _id: id
+    }, cuponData);
+};
+
+exports.removeById = (cuponId) => {
     return new Promise((resolve, reject) => {
-        Curso.deleteMany({_id: cursoId}, (err) => {
+        Cupon.deleteMany({_id: cuponId}, (err) => {
             if (err) {
                 reject(err);
             } else {

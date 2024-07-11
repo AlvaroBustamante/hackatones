@@ -1,7 +1,7 @@
-const CursoModel = require('../models/cursos.model');
+const CuponModel = require('../models/cupon.model');
 
 exports.insert = (req, res) => {
-    CursoModel.createCurso(req.body)
+    CuponModel.createCupon(req.body)
         .then((result) => {
             res.status(201).send({id: result._id});
         });
@@ -16,20 +16,21 @@ exports.list = (req, res) => {
             page = Number.isInteger(req.query.page) ? req.query.page : 0;
         }
     }
-    CursoModel.list(limit, page)
+    CuponModel.list(limit, page)
         .then((result) => {
             res.status(200).send(result);
         })
 };
 
 exports.getById = (req, res) => {
-    CursoModel.findById(req.params.cursoId)
+    CuponModel.findById(req.params.cuponId)
         .then((result) => {
             res.status(200).send(result);
         });
 };
+
 exports.patchById = (req, res) => {
-    CursoModel.patchCurso(req.params.cursoId, req.body)
+    CuponModel.patchCupon(req.params.cuponId, req.body)
         .then((result) => {
             res.status(204).send({});
         });
@@ -37,7 +38,7 @@ exports.patchById = (req, res) => {
 };
 
 exports.removeById = (req, res) => {
-    CursoModel.removeById(req.params.cursoId)
+    CuponModel.removeById(req.params.cuponId)
         .then((result)=>{
             res.status(204).send({});
         });

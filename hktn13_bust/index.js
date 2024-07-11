@@ -24,10 +24,17 @@ app.use(express.json());
 const AuthorizationRouter = require('./authorization/routes.config');
 const UsersRouter = require('./users/routes.config');
 const CursosRouter = require('./cursos/routes.config');
+const OrdenRouter = require('./ordenes/routes.config');
+const CuponRouter = require('./cupones/routes.config');
+
+
 
 AuthorizationRouter.routesConfig(app);
 UsersRouter.routesConfig(app);
 CursosRouter.routesConfig(app);
+OrdenRouter.routesConfig(app);
+CuponRouter.routesConfig(app);
+
 
 
 app.listen(PORT, function () {

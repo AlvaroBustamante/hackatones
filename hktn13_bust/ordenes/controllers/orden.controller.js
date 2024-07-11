@@ -1,7 +1,7 @@
-const CursoModel = require('../models/cursos.model');
+const OrdenModel = require('../models/orden.model');
 
 exports.insert = (req, res) => {
-    CursoModel.createCurso(req.body)
+    OrdenModel.createOrden(req.body)
         .then((result) => {
             res.status(201).send({id: result._id});
         });
@@ -16,20 +16,29 @@ exports.list = (req, res) => {
             page = Number.isInteger(req.query.page) ? req.query.page : 0;
         }
     }
-    CursoModel.list(limit, page)
+    OrdenModel.list(limit, page)
         .then((result) => {
             res.status(200).send(result);
         })
 };
 
 exports.getById = (req, res) => {
-    CursoModel.findById(req.params.cursoId)
+    OrdenModel.findById(req.params.ordenId)
         .then((result) => {
             res.status(200).send(result);
         });
 };
+
+exports.pagoById = (req, res) => {
+    OrdenModel.pagarOrden(req.params.ordenId)
+        .then((result) => {
+            res.status(204).send({});
+        });
+
+};
+
 exports.patchById = (req, res) => {
-    CursoModel.patchCurso(req.params.cursoId, req.body)
+    OrdenModel.patchOrden(req.params.ordenId, req.body)
         .then((result) => {
             res.status(204).send({});
         });
@@ -37,7 +46,7 @@ exports.patchById = (req, res) => {
 };
 
 exports.removeById = (req, res) => {
-    CursoModel.removeById(req.params.cursoId)
+    OrdenModel.removeById(req.params.ordenId)
         .then((result)=>{
             res.status(204).send({});
         });
