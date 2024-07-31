@@ -3,10 +3,6 @@ const app = express();
 require('dotenv').config();
 const PORT = process.env.PORT || 8000;
 
-//CRUD de ordenes de compra de cursos
-//Pasarela de pagos (simulacion de pago)
-//CRUD de Cupones de descuento
-
 app.use(function (req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Credentials', 'true');

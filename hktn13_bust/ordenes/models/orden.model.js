@@ -12,7 +12,6 @@ const ordenSchema = new Schema({
         ref: 'Cursos',
         required: true
     },
-    precio_unitario: Number,
     fecha_orden: {
         type: Date,
         default: Date.now
